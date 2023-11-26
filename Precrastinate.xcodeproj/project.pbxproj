@@ -16,6 +16,13 @@
 		37BB70512B13562C00D9E88C /* PrecrastinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB70502B13562C00D9E88C /* PrecrastinateTests.swift */; };
 		37BB705B2B13562C00D9E88C /* PrecrastinateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB705A2B13562C00D9E88C /* PrecrastinateUITests.swift */; };
 		37BB705D2B13562D00D9E88C /* PrecrastinateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB705C2B13562D00D9E88C /* PrecrastinateUITestsLaunchTests.swift */; };
+		37BB706A2B1356AB00D9E88C /* ProcrastinateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB70692B1356AB00D9E88C /* ProcrastinateView.swift */; };
+		37BB706C2B1356BA00D9E88C /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB706B2B1356BA00D9E88C /* TasksView.swift */; };
+		37BB706E2B1356C400D9E88C /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB706D2B1356C400D9E88C /* HistoryView.swift */; };
+		37BB70842B1358F200D9E88C /* Mission+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB70802B1358F200D9E88C /* Mission+CoreDataClass.swift */; };
+		37BB70852B1358F200D9E88C /* Mission+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB70812B1358F200D9E88C /* Mission+CoreDataProperties.swift */; };
+		37BB70862B1358F200D9E88C /* Interval+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB70822B1358F200D9E88C /* Interval+CoreDataClass.swift */; };
+		37BB70872B1358F200D9E88C /* Interval+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB70832B1358F200D9E88C /* Interval+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +55,13 @@
 		37BB70562B13562C00D9E88C /* PrecrastinateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrecrastinateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BB705A2B13562C00D9E88C /* PrecrastinateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecrastinateUITests.swift; sourceTree = "<group>"; };
 		37BB705C2B13562D00D9E88C /* PrecrastinateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecrastinateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		37BB70692B1356AB00D9E88C /* ProcrastinateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcrastinateView.swift; sourceTree = "<group>"; };
+		37BB706B2B1356BA00D9E88C /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		37BB706D2B1356C400D9E88C /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		37BB70802B1358F200D9E88C /* Mission+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mission+CoreDataClass.swift"; sourceTree = "<group>"; };
+		37BB70812B1358F200D9E88C /* Mission+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mission+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		37BB70822B1358F200D9E88C /* Interval+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interval+CoreDataClass.swift"; sourceTree = "<group>"; };
+		37BB70832B1358F200D9E88C /* Interval+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interval+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +112,12 @@
 		37BB70392B13562900D9E88C /* Precrastinate */ = {
 			isa = PBXGroup;
 			children = (
+				37BB70772B1357FB00D9E88C /* CoreData */,
 				37BB703A2B13562900D9E88C /* PrecrastinateApp.swift */,
 				37BB703C2B13562900D9E88C /* ContentView.swift */,
+				37BB70692B1356AB00D9E88C /* ProcrastinateView.swift */,
+				37BB706B2B1356BA00D9E88C /* TasksView.swift */,
+				37BB706D2B1356C400D9E88C /* HistoryView.swift */,
 				37BB703E2B13562C00D9E88C /* Assets.xcassets */,
 				37BB70432B13562C00D9E88C /* Persistence.swift */,
 				37BB70452B13562C00D9E88C /* Precrastinate.xcdatamodeld */,
@@ -131,6 +149,17 @@
 				37BB705C2B13562D00D9E88C /* PrecrastinateUITestsLaunchTests.swift */,
 			);
 			path = PrecrastinateUITests;
+			sourceTree = "<group>";
+		};
+		37BB70772B1357FB00D9E88C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				37BB70802B1358F200D9E88C /* Mission+CoreDataClass.swift */,
+				37BB70812B1358F200D9E88C /* Mission+CoreDataProperties.swift */,
+				37BB70822B1358F200D9E88C /* Interval+CoreDataClass.swift */,
+				37BB70832B1358F200D9E88C /* Interval+CoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +292,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37BB706E2B1356C400D9E88C /* HistoryView.swift in Sources */,
+				37BB706A2B1356AB00D9E88C /* ProcrastinateView.swift in Sources */,
+				37BB706C2B1356BA00D9E88C /* TasksView.swift in Sources */,
 				37BB70442B13562C00D9E88C /* Persistence.swift in Sources */,
+				37BB70862B1358F200D9E88C /* Interval+CoreDataClass.swift in Sources */,
+				37BB70872B1358F200D9E88C /* Interval+CoreDataProperties.swift in Sources */,
+				37BB70842B1358F200D9E88C /* Mission+CoreDataClass.swift in Sources */,
+				37BB70852B1358F200D9E88C /* Mission+CoreDataProperties.swift in Sources */,
 				37BB703D2B13562900D9E88C /* ContentView.swift in Sources */,
 				37BB703B2B13562900D9E88C /* PrecrastinateApp.swift in Sources */,
 				37BB70472B13562C00D9E88C /* Precrastinate.xcdatamodeld in Sources */,
