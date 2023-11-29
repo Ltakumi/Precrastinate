@@ -1,10 +1,3 @@
-//
-//  Persistence.swift
-//  Precrastinate
-//
-//  Created by Louis Takumi on 2023/11/26.
-//
-
 import CoreData
 
 struct PersistenceController {
@@ -14,15 +7,19 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         
-        for _ in 0..<10 {
+        for i in 0..<3 {
             let newItem = Interval(context: viewContext)
+            
+            newItem.isProcrastination = true
+            
             newItem.start = Date()
+            let durationInSeconds = Int.random(in: 600...1800) // Random duration between 10 and 30 minutes
+            newItem.end = Calendar.current.date(byAdding: .second, value: durationInSeconds, to: newItem.start!)
+            
         }
         do {
             try viewContext.save()
         } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
@@ -38,17 +35,6 @@ struct PersistenceController {
         }
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
