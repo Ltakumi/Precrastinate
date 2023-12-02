@@ -37,7 +37,9 @@ extension Interval {
         
         let durationString = durationFormatter.string(from: duration) ?? "N/A"
 
-        return "\(startTimeString) - \(durationString)"
+        var title = isProcrastination ? "Procrastinate" : (mission?.name ?? "Unknown Mission")
+
+        return "\(title): \(startTimeString) - \(durationString)"
     }
 }
 

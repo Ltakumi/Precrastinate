@@ -17,6 +17,23 @@ struct PersistenceController {
             newItem.end = Calendar.current.date(byAdding: .second, value: durationInSeconds, to: newItem.start!)
             
         }
+        
+        for i in 0..<3 {
+            let newItem = Interval(context: viewContext)
+            
+            newItem.isProcrastination = false
+            
+            newItem.start = Date()
+            let durationInSeconds = Int.random(in: 600...1800) // Random duration between 10 and 30 minutes
+            newItem.end = Calendar.current.date(byAdding: .second, value: durationInSeconds, to: newItem.start!)
+            
+        }
+        
+        for i in 0..<3 {
+            let newItem = Mission(context: viewContext)
+            newItem.name = "Task \(i)"
+        }
+        
         do {
             try viewContext.save()
         } catch {

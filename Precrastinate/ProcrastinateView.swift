@@ -132,12 +132,6 @@ struct ProcrastinateView: View {
         currentSessionStart = nil
     }
     
-    
-
-    
-    
-    
-
     private func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
