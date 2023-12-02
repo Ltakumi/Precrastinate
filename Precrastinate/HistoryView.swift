@@ -6,6 +6,7 @@ struct HistoryView: View {
         entity: Interval.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Interval.start, ascending: false)]
     ) private var intervals: FetchedResults<Interval>
+    @State private var showExportView = false
 
     private var dayStatistics: [(date: Date, procrastination: TimeInterval, onTask: TimeInterval)] {
         let calendar = Calendar.current
@@ -40,6 +41,12 @@ struct HistoryView: View {
                 }
             }
             .navigationTitle("History")
+            .navigationBarItems(trailing: Button("Export") {
+                showExportView = true
+            })
+            .sheet(isPresented: $showExportView) {
+                ExportView()
+            }
         }
     }
 
