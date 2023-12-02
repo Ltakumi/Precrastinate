@@ -1,10 +1,3 @@
-//
-//  IntervalView.swift
-//  Precrastinate
-//
-//  Created by Louis Takumi on 2023/12/03.
-//
-
 import SwiftUI
 
 struct IntervalView: View {
@@ -15,6 +8,7 @@ struct IntervalView: View {
     @State private var isProcrastination: Bool
     @State private var comments: String
     @State private var selectedMission: Mission?
+    @State private var showDeleteConfirmation = false
     @FetchRequest(entity: Mission.entity(), sortDescriptors: [])
     private var missions: FetchedResults<Mission>
 
@@ -55,7 +49,31 @@ struct IntervalView: View {
                     print("Error saving interval: \(error)")
                 }
             }
+            
+            Button("Delete", role: .destructive) {
+                showDeleteConfirmation = true
+            }
+            .alert(isPresented: $showDeleteConfirmation) {
+                Alert(
+                    title: Text("Confirm Delete"),
+                    message: Text("Are you sure you want to delete this interval?"),
+                    primaryButton: .destructive(Text("Delete")) {
+                        deleteInterval()
+                    },
+                    secondaryButton: .cancel()
+                )
+            }
         }
         .navigationTitle("Edit Interval")
     }
+    
+    private func deleteInterval() {
+        viewContext.delete(interval)
+        do {
+            try viewContext.save()
+        } catch {
+            print("Error deleting interval: \(error)")
+        }
+    }
+    
 }
