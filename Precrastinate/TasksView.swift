@@ -49,15 +49,16 @@ struct TasksView: View {
                 }
 
                 if isWorking {
-                    Button("End Task") {
-                        endTask()
+                    Button(action: endTask) {
+                        Text("End Task")
+                            .endTaskButtonStyle()
                     }
-                    .font(.headline)
+                    
                 } else {
-                    Button("Start Task") {
-                        startTask()
+                    Button(action: startTask) {
+                        Text("Start Task")
+                            .startTaskButtonStyle()
                     }
-                    .font(.headline)
                 }
             }
             .padding()
@@ -163,6 +164,33 @@ struct TasksView: View {
     }
 
 }
+
+extension Text {
+    func startTaskButtonStyle() -> some View {
+        self
+            .font(.headline)
+            .foregroundColor(.white)
+            .padding()
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .background(LinearGradient(gradient: Gradient(colors: [Color.orange, Color.pink]), startPoint: .topLeading, endPoint: .bottomTrailing))
+            .cornerRadius(40)
+            .shadow(radius: 5)
+            .padding(.horizontal)
+    }
+
+    func endTaskButtonStyle() -> some View {
+        self
+            .font(.headline)
+            .foregroundColor(.white)
+            .padding()
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .leading, endPoint: .trailing))
+            .cornerRadius(40)
+            .shadow(radius: 5)
+            .padding(.horizontal)
+    }
+}
+
 
 struct TasksView_Previews: PreviewProvider {
     static var previews: some View {

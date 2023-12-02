@@ -41,15 +41,15 @@ struct ProcrastinateView: View {
             }
 
             if isProcrastinating {
-                Button("Back to useful") {
-                    endProcrastinating()
+                Button(action: endProcrastinating) {
+                    Text("Back to useful")
+                        .endProcrastinatingButtonStyle()
                 }
-                .font(.headline)
             } else {
-                Button("Start Procrastinating") {
-                    startProcrastinating()
+                Button(action: startProcrastinating) {
+                    Text("Start Procrastinating")
+                        .startProcrastinatingButtonStyle()
                 }
-                .font(.headline)
             }
         }
         .padding()
@@ -146,6 +146,34 @@ struct ProcrastinateView: View {
         return formatter.string(from: duration) ?? "0s"
     }
 }
+
+extension Text {
+    func startProcrastinatingButtonStyle() -> some View {
+        self
+            .font(.headline)
+            .foregroundColor(.white)
+            .padding()
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .background(LinearGradient(gradient: Gradient(colors: [Color.orange, Color.pink]), startPoint: .topLeading, endPoint: .bottomTrailing))
+            .cornerRadius(40)
+            .shadow(radius: 5)
+            .padding(.horizontal)
+    }
+
+    func endProcrastinatingButtonStyle() -> some View {
+        self
+            .font(.headline)
+            .foregroundColor(.white)
+            .padding()
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .leading, endPoint: .trailing))
+            .cornerRadius(40)
+            .shadow(radius: 5)
+            .padding(.horizontal)
+    }
+}
+
+
 
 struct ProcrastinateView_Previews: PreviewProvider {
     static var previews: some View {
