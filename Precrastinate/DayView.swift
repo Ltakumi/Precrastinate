@@ -23,7 +23,9 @@ struct DayView: View {
     var body: some View {
         List {
             ForEach(intervalsForDay.wrappedValue, id: \.self) { interval in
-                Text(interval.formatInterval())
+                NavigationLink(destination: IntervalView(interval: interval)) {
+                    Text(interval.formatInterval())
+                }
             }
         }
         .navigationTitle("Day: \(date.formatted(date: .long, time: .omitted))")

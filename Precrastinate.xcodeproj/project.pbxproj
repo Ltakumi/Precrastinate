@@ -11,6 +11,7 @@
 		378023AE2B19B5C200BBE362 /* MissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378023AD2B19B5C200BBE362 /* MissionsView.swift */; };
 		378023B02B19B93300BBE362 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378023AF2B19B93300BBE362 /* MissionView.swift */; };
 		378023B22B1B2B9F00BBE362 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378023B12B1B2B9F00BBE362 /* DayView.swift */; };
+		378023B42B1B87D100BBE362 /* IntervalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378023B32B1B87D100BBE362 /* IntervalView.swift */; };
 		37BB703B2B13562900D9E88C /* PrecrastinateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB703A2B13562900D9E88C /* PrecrastinateApp.swift */; };
 		37BB703D2B13562900D9E88C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BB703C2B13562900D9E88C /* ContentView.swift */; };
 		37BB703F2B13562C00D9E88C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37BB703E2B13562C00D9E88C /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		378023AD2B19B5C200BBE362 /* MissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsView.swift; sourceTree = "<group>"; };
 		378023AF2B19B93300BBE362 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		378023B12B1B2B9F00BBE362 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		378023B32B1B87D100BBE362 /* IntervalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalView.swift; sourceTree = "<group>"; };
 		37BB70372B13562900D9E88C /* Precrastinate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Precrastinate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BB703A2B13562900D9E88C /* PrecrastinateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecrastinateApp.swift; sourceTree = "<group>"; };
 		37BB703C2B13562900D9E88C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				378023AB2B19B07700BBE362 /* AddMissionView.swift */,
 				37BB706D2B1356C400D9E88C /* HistoryView.swift */,
 				378023B12B1B2B9F00BBE362 /* DayView.swift */,
+				378023B32B1B87D100BBE362 /* IntervalView.swift */,
 				37BB703E2B13562C00D9E88C /* Assets.xcassets */,
 				37BB70452B13562C00D9E88C /* Precrastinate.xcdatamodeld */,
 				37BB70402B13562C00D9E88C /* Preview Content */,
@@ -317,6 +320,7 @@
 				37BB70842B1358F200D9E88C /* Mission+CoreDataClass.swift in Sources */,
 				37BB70852B1358F200D9E88C /* Mission+CoreDataProperties.swift in Sources */,
 				37BB703D2B13562900D9E88C /* ContentView.swift in Sources */,
+				378023B42B1B87D100BBE362 /* IntervalView.swift in Sources */,
 				37BB703B2B13562900D9E88C /* PrecrastinateApp.swift in Sources */,
 				37BB70472B13562C00D9E88C /* Precrastinate.xcdatamodeld in Sources */,
 			);
