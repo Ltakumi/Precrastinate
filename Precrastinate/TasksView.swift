@@ -18,12 +18,6 @@ struct TasksView: View {
                 Text("Tasks - \(formatDate(Date()))")
                     .font(.title2)
 
-                Picker("Select Mission", selection: $currentMission) {
-                    ForEach(missions, id: \.self) { mission in
-                        Text(mission.name ?? "Unknown").tag(mission as Mission?)
-                    }
-                }
-
                 Section(header: Text("Current session")) {
                     Text(formatDuration(currentSessionDuration))
                         .font(.title)
@@ -46,6 +40,15 @@ struct TasksView: View {
                             Text(interval.formatInterval())
                         }
                     }
+                }
+                
+                Picker("Select Mission", selection: $currentMission) {
+                    ForEach(missions, id: \.self) { mission in
+                        Text(mission.name ?? "Unknown")
+                        .font(.title2) // Increase font size
+                        .tag(mission as Mission?)
+                    }
+                    
                 }
 
                 if isWorking {
@@ -190,7 +193,6 @@ extension Text {
             .padding(.horizontal)
     }
 }
-
 
 struct TasksView_Previews: PreviewProvider {
     static var previews: some View {
